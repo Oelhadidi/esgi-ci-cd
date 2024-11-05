@@ -5,5 +5,10 @@ jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
-      - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - name: Checkout du dépôt
+        uses: actions/checkout@v3 # Cloner le dépôt
+      - name: Lister les fichiers
+        run: ls -l # Liste les fichiers du répertoire courant
+      - name: Afficher le contenu de README.md
+        run: cat README.md # Affiche le contenu du fichier `README.md`
+
