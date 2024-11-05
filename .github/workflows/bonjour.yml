@@ -6,9 +6,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout du dépôt
-        uses: actions/checkout@v3 # Cloner le dépôt
-      - name: Lister les fichiers
-        run: ls -l # Liste les fichiers du répertoire courant
+        uses: actions/checkout@v4 # Cloner le dépôt
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes cowsay
       - name: Afficher le contenu de README.md
         run: cat README.md # Affiche le contenu du fichier `README.md`
 
